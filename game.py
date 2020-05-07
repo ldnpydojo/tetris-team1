@@ -8,9 +8,10 @@ XX
 '''
 
 def to_coords(shape: str):
-    return (
-        'foo'
-        for line in shape.splitlines()
+    return set(
+        (x,y)
+        for y, line in enumerate(shape.splitlines())
+        for x, char in enumerate(line)
     )
 
 
